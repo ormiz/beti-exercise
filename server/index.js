@@ -4,9 +4,12 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const moment = require("moment");
 const app = express();
-const port = 3000;
+const port = process.env.PORT;
 
-const redisClient = redis.createClient();
+const redisClient = redis.createClient({
+    url: `redis://${process.env.REDIS_HOST}:${process.env.REDIS_PORT}`
+});
+redisClient.on('error', err => console.log('Redis Client Error', err));
 redisClient.connect();
 
 app.use(bodyParser.json());
