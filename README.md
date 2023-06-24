@@ -25,10 +25,11 @@ This API call will return a token which you'll be use for other API calls and th
 * If called multiple times - should return the same token.
 * If credentials are invalid - returns 401.
 * For any other error - returns 500.
-| Body Parameter | Type     | Description                |
+
+| Body Parameter | Type     | Description           |
 | :-------- | :------- | :------------------------- |
-| `username` | `string` | **Required**. Username |
-| `password` | `string` | **Required**. Password |
+| `username` | `string` | **Required**. Username - starts with "user" |
+| `password` | `string` | **Required**. Password - "password" |
 
 Response Body:
 | Body Parameter | Type     | Description                |
